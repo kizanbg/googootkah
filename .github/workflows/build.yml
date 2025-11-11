@@ -1,60 +1,47 @@
-name: Build Googootkah Firmware
+name: ZMK Build
 
 on:
   push:
     branches:
       - main
   pull_request:
-  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout vašeg repozitorijuma (config fajlovi)
+      # Checkout repozitorijuma
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      # 2️⃣ Checkout ZMK firmware kao podmodul
-      - name: Checkout ZMK firmware
-        uses: actions/checkout@v4
-        with:
-          repository: zmkfirmware/zmk
-          path: zmk
-
-      # 3️⃣ Instalacija zavisnosti i west
+      # Instalacija zavisnosti
       - name: Install dependencies
         run: |
           sudo apt update
-          sudo apt install -y python3-pip ninja-build gperf ccache dfu-util device-tree-compiler wget \
-              python3-dev python3-setuptools python3-tk python3-wheel xz-utils file make gcc \
-              libncurses6 libncurses-dev libffi-dev libssl-dev git
-          pip3 install --upgrade pip
-          pip3 install west
+          sudo apt install -y python3-pip git ninja-build gperf ccache dfu-util device-tree-compiler wget curl xz-utils file
+          pip3 install --user west
 
-      # 4️⃣ Inicijalizacija West-a i Zephyr okruženja (ispravljena putanja)
-      - name: Initialize West
+      # Inicijalizacija ZMK projekta
+      - name: Init west
         run: |
-          west init -l .
+          west init -l app
           west update
           west zephyr-export
 
-      # 5️⃣ Build leve polovine
-      - name: Build LEFT half
-        run: |
-          west build -s zmk/app -d build/left -b nice_nano_v2 -- -DSHIELD=googootkah_left
+      # Build leve polovine
+      - name: Build left half
+        run: west build -s app -d build/left -b nice_nano_v2
 
-      # 6️⃣ Build desne polovine
-      - name: Build RIGHT half
-        run: |
-          west build -s zmk/app -d build/right -b nice_nano_v2 -- -DSHIELD=googootkah_right
+      # Build desne polovine
+      - name: Build right half
+        run: west build -s app -d build/right -b nice_nano_v2
 
-      # 7️⃣ Upload firmware fajlova
-      - name: Upload firmware artifacts
-        uses: actions/upload-artifact@v4
+      # Upload artifacts (.uf2 fajlovi)
+      - name: Upload UF2 files
+        uses: actions/upload-artifact@v3
         with:
-          name: googootkah_firmware
+          name: googootkah-uf2
           path: |
-            build/left/zephyr/zmk.uf2
-            build/right/zephyr/zmk.uf2
+            build/left/zmk.uf2
+            build/right/zmk.uf2
