@@ -1,0 +1,20 @@
+name: Build Firmware
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup West
+        run: |
+          pip3 install west
+          west init -l app
+          west update
+      - name: Build left
+        run: west build -p -b nice_nano_v2 -- -DSHIELD=googootkah_left
+      - name: Build right
+        run: west build -p -b nice_nano_v2 -- -DSHIELD=googootkah_right
