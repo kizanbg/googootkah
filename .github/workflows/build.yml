@@ -12,21 +12,45 @@ jobs:
 
     steps:
       # Checkout repozitorijuma
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      # Setup Zephyr + ZMK environment preko ZMK GitHub Action
-      - uses: zmkfirmware/setup-zmk@main
-        with:
-          zmk-version: main
+      # Instalacija zavisnosti
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y python3-pip git ninja-build gperf ccache dfu-util device-tree-compiler wget curl xz-utils file
+          pip3 install --user west
+
+      # Kloniranje Zephyr SDK i ZMK firmware
+      - name: Clone Zephyr SDK
+        run: |
+          git clone --branch main https://github.com/zephyrproject-rtos/zephyr.git zephyr
+          git clone --branch main https://github.com/zmkfirmware/zmk.git zmk
+
+      # Export Zephyr environment
+      - name: Set Zephyr base
+        run: |
+          export ZEPHYR_BASE=$PWD/zephyr
+          west init -l zmk
+          west update
+          west zephyr-export
 
       # Build leve polovine
-      - run: west build -s app -d build/left -b nice_nano_v2
+      - name: Build left half
+        run: |
+          export ZEPHYR_BASE=$PWD/zephyr
+          west build -s zmk/app -d build/left -b nice_nano_v2
 
       # Build desne polovine
-      - run: west build -s app -d build/right -b nice_nano_v2
+      - name: Build right half
+        run: |
+          export ZEPHYR_BASE=$PWD/zephyr
+          west build -s zmk/app -d build/right -b nice_nano_v2
 
       # Upload artefakata (.uf2 fajlova)
-      - uses: actions/upload-artifact@v4
+      - name: Upload UF2 files
+        uses: actions/upload-artifact@v4
         with:
           name: googootkah-uf2
           path: |
