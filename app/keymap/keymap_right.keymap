@@ -1,0 +1,27 @@
+/ {
+    compatible = "zmk,keymap";
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        // Red 1
+        o: key_0 { bindings = <&kp O>; };
+        i: key_1 { bindings = <&kp I>; };
+        u: key_2 { bindings = <&kp U>; };
+        y: key_3 { bindings = <&kp Y>; };
+
+        // Red 2
+        l: key_4 { bindings = <&kp L>; };
+        k: key_5 { bindings = <&kp K>; };
+        j: key_6 { bindings = <&kp J>; };
+        h: key_7 { bindings = <&kp H>; };
+
+        // Red 3
+        enter: key_8 { bindings = <&kp ENTER>; };
+        dot: key_9   { bindings = <&kp DOT>; };
+        comma: key_10 { bindings = <&kp COMMA>; };
+        m: key_11    { bindings = <&kp M>; };
+        n: key_12    { bindings = <&kp N>; };
+        backspace: key_13 { bindings = <&kp BACKSPACE>; };
+    };
+};

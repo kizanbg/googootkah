@@ -33,10 +33,10 @@ jobs:
           pip3 install --upgrade pip
           pip3 install west
 
-      # 4️⃣ Inicijalizacija West-a i Zephyr okruženja
+      # 4️⃣ Inicijalizacija West-a i Zephyr okruženja (ispravljena putanja)
       - name: Initialize West
         run: |
-          west init -l app
+          west init -l .
           west update
           west zephyr-export
 

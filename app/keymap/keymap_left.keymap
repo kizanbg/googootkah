@@ -1,0 +1,27 @@
+/ {
+    compatible = "zmk,keymap";
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        // Red 1
+        w: key_0 { bindings = <&kp W>; };
+        e: key_1 { bindings = <&kp E>; };
+        r: key_2 { bindings = <&kp R>; };
+        t: key_3 { bindings = <&kp T>; };
+
+        // Red 2
+        a: key_4 { bindings = <&kp A>; };
+        s: key_5 { bindings = <&kp S>; };
+        d: key_6 { bindings = <&kp D>; };
+        f: key_7 { bindings = <&kp F>; };
+
+        // Red 3
+        z: key_8  { bindings = <&kp Z>; };
+        x: key_9  { bindings = <&kp X>; };
+        c: key_10 { bindings = <&kp C>; };
+        v: key_11 { bindings = <&kp V>; };
+        b: key_12 { bindings = <&kp B>; };
+        space: key_13 { bindings = <&kp SPACE>; };
+    };
+};
