@@ -1,44 +1,46 @@
-name: Build Googootkah Firmware
+name: Build ZMK firmware
 
 on:
   push:
+    branches:
+      - main
   pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout config repo
         uses: actions/checkout@v4
 
-      - name: Setup Python & West
-        run: |
-          python3 -m pip install --upgrade pip
-          pip3 install west
+      - name: Checkout ZMK firmware
+        uses: actions/checkout@v4
+        with:
+          repository: zmkfirmware/zmk
+          path: zmk
 
-      - name: Initialize West and fetch dependencies
+      - name: Setup West
+        uses: cschleiden/setup-west@v1
+
+      - name: Initialize West
         run: |
-          west init -l .
+          west init -l config
           west update
-          west zephyr-export
 
-      - name: Build LEFT half
+      - name: Build googootkah_left
         run: |
           west build -s zmk/app -d build/left -b nice_nano_v2 -- -DSHIELD=googootkah_left
 
-      - name: Upload LEFT firmware artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: googootkah_left.uf2
-          path: build/left/zephyr/zmk.uf2
-
-      - name: Build RIGHT half
+      - name: Build googootkah_right
         run: |
           west build -s zmk/app -d build/right -b nice_nano_v2 -- -DSHIELD=googootkah_right
 
-      - name: Upload RIGHT firmware artifact
+      - name: Upload firmware artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: googootkah_right.uf2
-          path: build/right/zephyr/zmk.uf2
+          name: googootkah_firmware
+          path: |
+            build/left/zephyr/zmk.uf2
+            build/right/zephyr/zmk.uf2
