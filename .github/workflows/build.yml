@@ -22,13 +22,6 @@ jobs:
           sudo apt install -y python3-pip git ninja-build gperf ccache dfu-util device-tree-compiler wget curl xz-utils file
           pip3 install --user west
 
-      # Inicijalizacija ZMK projekta
-      - name: Init west
-        run: |
-          west init -l app
-          west update
-          west zephyr-export
-
       # Build leve polovine
       - name: Build left half
         run: west build -s app -d build/left -b nice_nano_v2
