@@ -1,14 +1,14 @@
-if SHIELD_THE_ABYSS_LEFT
+if SHIELD_GOOGOOTKAH_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "The Abyss"
+    default "GooGooTkah"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_THE_ABYSS_LEFT || SHIELD_THE_ABYSS_RIGHT
+if SHIELD_GOOGOOTKAH_LEFT || SHIELD_GOOGOOTKAH_RIGHT
 
 config ZMK_SPLIT
     default y
