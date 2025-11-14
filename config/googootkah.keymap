@@ -20,45 +20,54 @@
         base_layer {
             label = "BAS";
             bindings = <
-                            &kp W           &kp E           &kp R           &kp T           /*                              */      &kp Y       &kp U       &kp I       &kp O
-                            &kp A           &kp S           &kp D           &kp F           /*                              */      &kp H       &kp J       &kp K       &kp L
-                &kp Z       &kp X           &kp C           &kp V           &kp B           &my_lt NUM SPACE   &my_lt FUN BSPC      &kp N       &kp M       &kp COMMA   &kp DOT &kp ENTER
-            >;
-        };
+                            &kp W           &kp E           &kp R           &kp T           /*                              */          &kp Y           &kp U           &kp I           &kp O
+                            &kp A           &kp S           &kp D           &kp F           /*                              */          &kp H           &kp J           &kp K           &kp L
+                &kp Z       &kp X           &kp C           &kp V           &kp B           &my_lt NUM SPACE   &my_lt FUN BSPC          &kp N           &kp M           &kp COMMA       &kp DOT     &kp ENTER
+            >;              
+        };              
 
-        number_layer {
-            label = "NUM";
-            bindings = <
-                            &trans          &trans          &trans          &trans          /*                              */      &trans      &kp N7      &kp N8      &kp N9
-                            &trans          &trans          &trans          &trans          /*                              */      &trans      &kp N4      &kp N5      &kp N6
-                &trans      &trans          &trans          &trans          &trans          &trans                      &trans      &trans      &kp N1      &kp N2      &kp N3      &kp N0
-            >;
-        };
+        number_layer {              
+            label = "NUM";              
+            bindings = <                
+                            &trans          &trans          &trans          &trans          /*                              */          &trans          &kp N7          &kp N8          &kp N9
+                            &trans          &trans          &trans          &trans          /*                              */          &trans          &kp N4          &kp N5          &kp N6
+                &trans      &trans          &trans          &trans          &trans          &trans                      &trans          &trans          &kp N1          &kp N2          &kp N3      &kp N0
+            >;              
+        };              
 
-        function_layer {
-            label = "FUN";
-            bindings = <
-                            &bt BT_CLR_ALL  &trans          &trans          &trans          /*                              */      &trans      &trans      &trans      &trans
-                            &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    /*                              */      &trans      &trans      &trans      &trans
-                &trans      &trans          &trans          &trans          &trans          &trans                      &trans      &trans      &trans      &trans      &trans      &trans
-            >;
-        };
+        function_layer {                
+            label = "FUN";              
+            bindings = <                
+                            &trans          &trans          &trans          &trans          /*                              */          &trans          &trans          &trans          &trans
+                            &trans          &trans          &trans          &trans          /*                              */          &trans          &trans          &trans          &trans
+                &trans      &trans          &trans          &trans          &trans          &trans                      &trans          &trans          &trans          &trans          &trans      &trans
+            >;              
+        };             
 
-        symbol_layer {
-            label = "SYM";
-            bindings = <
-                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans   &trans       &trans    &trans  &trans  &trans  &trans &trans
-            >;
-        };
+        /* function_layer {                
+            label = "FUN";              
+            bindings = <                
+                            &bt BT_CLR_ALL  &trans          &trans          &trans          /*                              */          &trans          &trans          &trans          &trans
+                            &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    /*                              */          &trans          &trans          &trans          &trans
+                &trans      &trans          &trans          &trans          &trans          &trans                      &trans          &trans          &trans          &trans          &trans      &trans
+            >;              
+        }; */             
 
-        navigation_layer {
-            label = "NAV";
-            bindings = <
-                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans   &trans       &trans    &trans  &trans  &trans  &trans &trans
+        symbol_layer {              
+            label = "SYM";              
+            bindings = <                
+                            &trans          &trans          &trans          &trans          /*                              */          &trans          &trans          &trans          &trans
+                            &trans          &trans          &trans          &trans          /*                              */          &trans          &trans          &trans          &trans
+                &trans      &trans          &trans          &trans          &trans          &trans                      &trans          &trans          &trans          &trans          &trans      &trans
+            >;              
+        };              
+
+        navigation_layer {              
+            label = "NAV";              
+            bindings = <                
+                            &trans          &trans          &trans          &trans          /*                              */          &trans          &trans          &trans          &trans
+                            &trans          &trans          &trans          &trans          /*                              */          &trans          &trans          &trans          &trans
+                &trans      &trans          &trans          &trans          &trans          &trans                      &trans          &trans          &trans          &trans          &trans      &trans
             >;
         };
     };
@@ -125,7 +134,7 @@
             // global-quick-tap;
             bindings = <&kp>, <&kp>;
             // opposite side hand keys
-            hold-trigger-key-positions = <4 5 6 7 13 14 15 16 17 21 22 23 24 25 26 27>;
+            hold-trigger-key-positions = <4 5 6 7 13 14 15 16 17 21 22 23>;
         };
         hr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
@@ -138,7 +147,7 @@
             // global-quick-tap;
             bindings = <&kp>, <&kp>;
             // opposite side hand keys
-            hold-trigger-key-positions = <0 1 2 3 8 9 10 11 12 18 19 20 24 25 26 27>;
+            hold-trigger-key-positions = <0 1 2 3 8 9 10 11 12 18 19 20>;
         };
 
         my_lt: my_layer_taps {
@@ -153,6 +162,22 @@
             bindings = <&mo &kp>, <&kp>;
             // non-thumb keys
             // hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23>;
+        };
+
+        dotcol: dot_colon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_COL";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
+        comsem: comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COM_SEM";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
