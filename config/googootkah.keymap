@@ -23,10 +23,10 @@
         base_layer {
             label = "BAS";
             bindings = <
-                            &kp W           &kp E           &kp R           &kp T           /*                              */          &kp Y           &kp U           &kp I           &kp O
-                            &kp A           &kp S           &kp D           &kp F           /*                              */          &kp H           &kp J           &kp K           &kp L
-                &kp Z       &kp X           &kp C           &kp V           &kp B           &kp SPACE                 &kp BSPC          &kp N           &kp M           &kp COMMA       &kp DOT     &kp ENTER
-            >;              
+                        &kp W   &kp E   &kp R   &kp T   /*                              */    &kp Y   &kp U   &kp I      &kp O
+                        &kp A   &kp S   &kp D   &kp F   /*                              */    &kp H   &kp J   &kp K      &kp L
+                &kp Z   &kp X   &kp C   &kp V   &kp B   &my_lt NUM SPACE   &my_lt FUN BSPC    &kp N   &kp M   &kp COMMA  &kp DOT &kp ENTER
+            >;
         };
 
         game1_layer {
@@ -54,50 +54,41 @@
                         &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
                 &trans  &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans &trans
             >;
-        };              
+        };
 
-        number_layer {              
-            label = "NUM";              
-            bindings = <                
-                            &trans          &trans          &trans          &trans          /*                              */          &trans          &kp N7          &kp N8          &kp N9
-                            &trans          &trans          &trans          &trans          /*                              */          &trans          &kp N4          &kp N5          &kp N6
-                &trans      &trans          &trans          &trans          &trans          &trans                      &trans          &trans          &kp N1          &kp N2          &kp N3      &kp N0
-            >;              
-        };              
+        number_layer {
+            label = "NUM";
+            bindings = <
+                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans &trans
+            >;
+        };
 
-        function_layer {                
-            label = "FUN";              
-            bindings = <                
-                            &trans          &trans          &trans          &trans          /*                              */          &trans          &trans          &trans          &trans
-                            &trans          &trans          &trans          &trans          /*                              */          &trans          &trans          &trans          &trans
-                &trans      &trans          &trans          &trans          &trans          &trans                      &trans          &trans          &trans          &trans          &trans      &trans
-            >;              
-        };             
+        function_layer {
+            label = "FUN";
+            bindings = <
+                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans &trans
+            >;
+        };
 
-        /* function_layer {                
-            label = "FUN";              
-            bindings = <                
-                            &bt BT_CLR_ALL  &trans          &trans          &trans          /*                              */          &trans          &trans          &trans          &trans
-                            &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    /*                              */          &trans          &trans          &trans          &trans
-                &trans      &trans          &trans          &trans          &trans          &trans                      &trans          &trans          &trans          &trans          &trans      &trans
-            >;              
-        }; */             
+        symbol_layer {
+            label = "SYM";
+            bindings = <
+                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans &trans
+            >;
+        };
 
-        symbol_layer {              
-            label = "SYM";              
-            bindings = <                
-                            &trans          &trans          &trans          &trans          /*                              */          &trans          &trans          &trans          &trans
-                            &trans          &trans          &trans          &trans          /*                              */          &trans          &trans          &trans          &trans
-                &trans      &trans          &trans          &trans          &trans          &trans                      &trans          &trans          &trans          &trans          &trans      &trans
-            >;              
-        };              
-
-        navigation_layer {              
-            label = "NAV";              
-            bindings = <                
-                            &trans          &trans          &trans          &trans          /*                              */          &trans          &trans          &trans          &trans
-                            &trans          &trans          &trans          &trans          /*                              */          &trans          &trans          &trans          &trans
-                &trans      &trans          &trans          &trans          &trans          &trans                      &trans          &trans          &trans          &trans          &trans      &trans
+        navigation_layer {
+            label = "NAV";
+            bindings = <
+                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans &trans
             >;
         };
     };
