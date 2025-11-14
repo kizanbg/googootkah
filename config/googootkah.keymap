@@ -22,7 +22,7 @@
             bindings = <
                             &kp W           &kp E           &kp R           &kp T           /*                              */          &kp Y           &kp U           &kp I           &kp O
                             &kp A           &kp S           &kp D           &kp F           /*                              */          &kp H           &kp J           &kp K           &kp L
-                &kp Z       &kp X           &kp C           &kp V           &kp B           &my_lt NUM SPACE   &my_lt FUN BSPC          &kp N           &kp M           &kp COMMA       &kp DOT     &kp ENTER
+                &kp Z       &kp X           &kp C           &kp V           &kp B           &kp SPACE                 &kp BSPC          &kp N           &kp M           &kp COMMA       &kp DOT     &kp ENTER
             >;              
         };              
 
@@ -171,7 +171,7 @@
             bindings = <&kp DOT>, <&kp COLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        
+
         comsem: comma_semicolon {
             compatible = "zmk,behavior-mod-morph";
             label = "COM_SEM";
