@@ -5,10 +5,10 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define BAS 0
-#define NUM 4
-#define FUN 5
-#define SYM 6
-#define NAV 7
+#define NUM 1
+#define FUN 2
+#define SYM 3
+#define NAV 4
 
 #define SCNSHT  LG(LS(S))
 #define TSK_MGR LC(LS(ESC))
