@@ -5,10 +5,13 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define BAS 0
-#define NUM 1
-#define FUN 2
-#define SYM 3
-#define NAV 4
+#define GA1 1
+#define GA2 2
+#define GA3 3
+#define NUM 4
+#define FUN 5
+#define SYM 6
+#define NAV 7
 
 #define SCNSHT  LG(LS(S))
 #define TSK_MGR LC(LS(ESC))
@@ -24,6 +27,33 @@
                             &kp A           &kp S           &kp D           &kp F           /*                              */          &kp H           &kp J           &kp K           &kp L
                 &kp Z       &kp X           &kp C           &kp V           &kp B           &kp SPACE                 &kp BSPC          &kp N           &kp M           &kp COMMA       &kp DOT     &kp ENTER
             >;              
+        };
+
+        game1_layer {
+            label = "GA1";
+            bindings = <
+                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans &trans
+            >;
+        };
+
+        game2_layer {
+            label = "GA2";
+            bindings = <
+                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans &trans
+            >;
+        };
+
+        game3_layer {
+            label = "GA3";
+            bindings = <
+                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans &trans
+            >;
         };              
 
         number_layer {              
