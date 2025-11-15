@@ -121,12 +121,12 @@
         #define DEFAULT_LAYERS BAS NUM FUN SYM NAV NUM NAV
         #define NONBASE_LAYERS     NUM FUN SYM NAV NUM NAV
 
-        COMBO(z,    &kp Y,      16  17, DEFAULT_TIME, DEFAULT_LAYERS)
+        COMBO(z,    &kp Y,       4   5, DEFAULT_TIME, DEFAULT_LAYERS)
         COMBO(q,    &kp Q,       0   1, DEFAULT_TIME, DEFAULT_LAYERS)
-        COMBO(g,    &kp G,       6   7, DEFAULT_TIME, DEFAULT_LAYERS)
-        COMBO(h,    &kp H,      20  21, DEFAULT_TIME, DEFAULT_LAYERS)
-        COMBO(b,    &kp B,      11  12, DEFAULT_TIME, DEFAULT_LAYERS)
-        /*COMBO(esc,  &kp ESC,     0   4, DEFAULT_TIME, DEFAULT_LAYERS)*/
+        COMBO(g,    &kp G,      10  11, DEFAULT_TIME, DEFAULT_LAYERS)
+        COMBO(h,    &kp H,      12  13, DEFAULT_TIME, DEFAULT_LAYERS)
+        COMBO(b,    &kp B,      20  21, DEFAULT_TIME, DEFAULT_LAYERS)
+        COMBO(esc,  &kp ESC,     0   8, DEFAULT_TIME, DEFAULT_LAYERS)
     };
 
     behaviors {
