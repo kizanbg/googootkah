@@ -102,7 +102,7 @@
       ╰────────────────────────╯╰────────────────────────╯
     */
 
-    /*combos {
+    combos {
         compatible = "zmk,combos";
 
         #define COMBO(NAME, BINDINGS, KEYPOS, TIMEOUT, LAYERS) \
@@ -117,42 +117,18 @@
         #define DEFAULT_TIME 64
         #define LONG_TIME    128
 
-        #define ALL_LAYERS     BAS GA1 GA2 GA3 NUM FUN SYM NAV NUM NAV
-        #define DEFAULT_LAYERS BAS     GA2 GA3 NUM FUN SYM NAV NUM NAV
-        #define NONBASE_LAYERS         GA2 GA3 NUM FUN SYM NAV NUM NAV
+        #define ALL_LAYERS     BAS NUM FUN SYM NAV NUM NAV
+        #define DEFAULT_LAYERS BAS NUM FUN SYM NAV NUM NAV
+        #define NONBASE_LAYERS     NUM FUN SYM NAV NUM NAV
 
-        COMBO(l_bail    , &bail     , 30 31, DEFAULT_TIME, DEFAULT_LAYERS)
-        COMBO(r_bail    , &bail     , 34 35, DEFAULT_TIME, DEFAULT_LAYERS)
-        COMBO(tab       , &kp TAB   , 13 31, DEFAULT_TIME, DEFAULT_LAYERS)
-        COMBO(del       , &kp DEL   , 16 34, DEFAULT_TIME, DEFAULT_LAYERS)
-        COMBO(caps_word , &caps_word, 31 34, DEFAULT_TIME, DEFAULT_LAYERS)
-
-        COMBO(l_sk_ctrl , &sk LCTRL , 13 23, DEFAULT_TIME, DEFAULT_LAYERS)
-        COMBO(l_sk_shift, &sk LSHIFT, 12 22, DEFAULT_TIME, DEFAULT_LAYERS)
-        COMBO(l_sk_alt  , &sk LALT  , 11 21, DEFAULT_TIME, DEFAULT_LAYERS)
-        COMBO(l_win     , &kp LWIN  , 10 20, DEFAULT_TIME, DEFAULT_LAYERS)
-
-        COMBO(r_sk_ctrl , &sk LCTRL , 16 26, DEFAULT_TIME, DEFAULT_LAYERS)
-        COMBO(r_sk_shift, &sk RSHIFT, 17 27, DEFAULT_TIME, DEFAULT_LAYERS)
-        COMBO(r_sk_alt  , &sk RALT  , 18 28, DEFAULT_TIME, DEFAULT_LAYERS)
-        COMBO(r_win     , &kp LWIN  , 19 29, DEFAULT_TIME, DEFAULT_LAYERS)
-
-        COMBO(num_bspc  , &kp BSPC  , 6  16, DEFAULT_TIME, NUM           )
-        COMBO(num_comma , &kp COMMA , 7  17, DEFAULT_TIME, NUM           )
-        COMBO(num_space , &kp SPACE , 8  18, DEFAULT_TIME, NUM           )
-    };*/
-
-
-    /*combos {
-        compatible = "zmk,combos";
-        COMBO(z,    &kp Y,      16  17)
-        COMBO(q,    &kp Q,       0   1)
-        COMBO(g,    &kp G,       6   7)
-        COMBO(h,    &kp H,      20  21)
-        COMBO(b,    &kp B,      11  12)
-        COMBO(b,    &kp B,      25  26)
-        COMBO(esc,  &kp ESC,     0   4)
-    };*/
+        COMBO(z,    &kp Y,      16  17, DEFAULT_TIME, DEFAULT_LAYERS)
+        COMBO(q,    &kp Q,       0   1, DEFAULT_TIME, DEFAULT_LAYERS)
+        COMBO(g,    &kp G,       6   7, DEFAULT_TIME, DEFAULT_LAYERS)
+        COMBO(h,    &kp H,      20  21, DEFAULT_TIME, DEFAULT_LAYERS)
+        COMBO(b,    &kp B,      11  12, DEFAULT_TIME, DEFAULT_LAYERS)
+        COMBO(b,    &kp B,      25  26, DEFAULT_TIME, DEFAULT_LAYERS)
+        COMBO(esc,  &kp ESC,     0   4, DEFAULT_TIME, DEFAULT_LAYERS)
+    };
 
     behaviors {
         
