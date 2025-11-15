@@ -126,7 +126,6 @@
         COMBO(g,    &kp G,       6   7, DEFAULT_TIME, DEFAULT_LAYERS)
         COMBO(h,    &kp H,      20  21, DEFAULT_TIME, DEFAULT_LAYERS)
         COMBO(b,    &kp B,      11  12, DEFAULT_TIME, DEFAULT_LAYERS)
-        COMBO(b,    &kp B,      25  26, DEFAULT_TIME, DEFAULT_LAYERS)
         /*COMBO(esc,  &kp ESC,     0   4, DEFAULT_TIME, DEFAULT_LAYERS)*/
     };
 
