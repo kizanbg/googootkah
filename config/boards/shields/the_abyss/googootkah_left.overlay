@@ -1,1 +1,7 @@
 #include "googootkah.dtsi"
+
+/ {
+    chosen {
+        zmk,display = &ssd1306;
+    };
+};
