@@ -23,18 +23,18 @@
         base_layer {
             label = "BAS";
             bindings = <
-                        &kp W   &kp E   &kp R   &kp T   /*                              */    &kp U   &kp I   &kp O      &kp P   
-                        &kp A   &kp S   &kp D   &kp F   /*                              */    &kp J   &kp K   &kp L      &kp ENTER   
-            &kp LSFT    &kp Z   &kp X   &kp C   &kp V   &my_lt NUM SPACE   &my_lt FUN BSPC    &kp N   &kp M   &kp COMMA  &kp DOT    &kp RCTL
+                            &kp W       &kp E       &kp R       &kp T   /*                              */    &kp U     &kp I       &kp O       &kp P   
+                            &hl LCTRL A &hl LGUI S  &hl LALT D  &kp F   /*                              */    &kp J     &kp K       &kp L       &kp ENTER   
+            &kp LSFT        &kp Z       &kp X       &kp C       &kp V   &my_lt NUM SPACE   &my_lt FUN BSPC    &kp N     &kp M       &kp COMMA   &kp DOT     &kp RCTL
             >;
         };
 
         game1_layer {
             label = "GA1";
             bindings = <
-                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans   /*               */    &trans  &trans  &trans  &trans &trans
+                            &trans      &trans      &trans      &trans   /*                             */    &trans    &trans      &trans      &trans
+                            &trans      &trans      &trans      &trans   /*                             */    &trans    &trans      &trans      &trans
+                &trans      &trans      &trans      &trans      &trans   /*                             */    &trans    &trans      &trans      &trans      &trans
             >;
         };
 
@@ -126,6 +126,7 @@
         COMBO(g,    &kp G,      10  11, DEFAULT_TIME, DEFAULT_LAYERS)
         COMBO(h,    &kp H,      12  13, DEFAULT_TIME, DEFAULT_LAYERS)
         COMBO(b,    &kp B,      20  21, DEFAULT_TIME, DEFAULT_LAYERS)
+        COMBO(tab,  &kp TAB,     8   9, DEFAULT_TIME, DEFAULT_LAYERS)
         COMBO(esc,  &kp ESC,     0   8, DEFAULT_TIME, DEFAULT_LAYERS)
     };
 
@@ -190,75 +191,6 @@
     };
 
     /*behaviors {
-        bt_sel: tap_dance_bluetooth_select {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BLUETOOTH_SELECT";
-            #binding-cells = <0>;
-            tapping-term-ms = <256>;
-            bindings = <&bt BT_SEL 0>, <&bt BT_SEL 1>, <&bt BT_SEL 2>;
-        };
-
-        bt_clr: tap_dance_bluetooth_clear {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BLUETOOTH_CLEAR";
-            #binding-cells = <0>;
-            tapping-term-ms = <256>;
-            bindings = <&trans>, <&bt BT_CLR>;
-        };
-
-        tg_game: tg_game {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TOGGLE_GAME";
-            #binding-cells = <0>;
-            tapping-term-ms = <512>;
-            bindings = <&to BAS>, <&to GA1>;
-        };
-
-        n0_: tap_dance_n0_ {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_N0_N9";
-            #binding-cells = <0>;
-            tapping-term-ms = <512>;
-            bindings = <&kp N0>, <&kp N1>, <&kp N2>, <&kp N3>, <&kp N4>,
-                       <&kp N5>, <&kp N6>, <&kp N7>, <&kp N8>, <&kp N9>;
-        };
-
-        f1_: tap_dance_f1_ {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_F1_F24";
-            #binding-cells = <0>;
-            tapping-term-ms = <512>;
-            bindings = <&kp F1>, <&kp F2>, <&kp F3>, <&kp F4>,
-                       <&kp F5>, <&kp F6>, <&kp F7>, <&kp F8>,
-                       <&kp F9>, <&kp F10>, <&kp F11>, <&kp F12>,
-                       <&kp F13>, <&kp F14>, <&kp F15>, <&kp F16>,
-                       <&kp F17>, <&kp F18>, <&kp F19>, <&kp F20>,
-                       <&kp F22>, <&kp F23>, <&kp F24>;
-        };
-
-        f5_: tap_dance_f5_ {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_F5_F24";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&kp F5>, <&kp F6>, <&kp F7>, <&kp F8>,
-                       <&kp F9>, <&kp F10>, <&kp F11>, <&kp F12>,
-                       <&kp F13>, <&kp F14>, <&kp F15>, <&kp F16>,
-                       <&kp F17>, <&kp F18>, <&kp F19>, <&kp F20>,
-                       <&kp F22>, <&kp F23>, <&kp F24>;
-        };
-
-        f9_: tap_dance_f9_ {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_F9_F24";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&kp F9>, <&kp F10>, <&kp F11>, <&kp F12>,
-                       <&kp F13>, <&kp F14>, <&kp F15>, <&kp F16>,
-                       <&kp F17>, <&kp F18>, <&kp F19>, <&kp F20>,
-                       <&kp F22>, <&kp F23>, <&kp F24>;
-        };
-
         media: tap_dance_media {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_MEDIA";
@@ -267,49 +199,6 @@
             bindings = <&kp C_PP>, <&kp C_NEXT>, <&kp C_PREV>;
         };
 
-        output: tap_output {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_OUTPUT";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&out OUT_USB>, <&out OUT_BLE>;
-        };
-
-        esc_tab: mod_morph_esc_tab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ESC_TAB";
-            #binding-cells = <0>;
-            bindings = <&kp ESC>, <&kp TAB>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-            keep-mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        et_l: esc_tab_layer_x {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ESC_TAB_LAYER";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <250>;
-            bindings = <&mo>, <&esc_tab>;
-        };
-    };*/
-
-    /*macros {
-        // No way to cancel sticky keys so using F24 as a NOOP proxy
-        // Bailing out of any sticky keyboard state macro
-        bail: macro_bail {
-            label = "MACRO_BAIL";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp F24 &to BAS>;
-        };
-
-        noop: macro_noop {
-            label = "MACRO_NOOP";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp F24>;
-        };
     };*/
 };
 
