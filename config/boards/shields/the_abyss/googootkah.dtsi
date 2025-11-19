@@ -1,4 +1,4 @@
-#include <dt-bindings/zmk/matrix-transform.h>
+#include <dt-bindings/zmk/matrix_transform.h>
 
 / {
     chosen {
@@ -42,7 +42,7 @@
     };
 };
 
-/* --- OLED mora biti CHILD NODE i2c0 --- */
+/* --- I2C i OLED --- */
 &i2c0 {
     compatible = "nordic,nrf-twi";
     status = "okay";
@@ -51,12 +51,22 @@
     clock-frequency = <I2C_BITRATE_STANDARD>;
 
     oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
+        compatible = "solomon,ssd1306fb-i2c";
         reg = <0x3c>;
         label = "SSD1306";
+
         width = <128>;
         height = <32>;
         rotation = <0>;
+
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        segment-remap = <1>;
+        com-invdir = <0>;
+        prechargep = <0xF1>;
+        compins = <2>;
+        contrast = <128>;
         bus-speed = <100000>;
     };
 };

@@ -1,5 +1,6 @@
 #include "googootkah.dtsi"
 
+/* Desna polovina: offset kolona */
 &default_transform {
-	col-offset = <14>;
+    col-offset = <14>;
 };
