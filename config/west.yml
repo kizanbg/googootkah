@@ -15,5 +15,8 @@ manifest:
       remote: nguyendown
       revision: behaviors/sticky-key-deactivate-after-hold
       import: app/west.yml
+    - name: zmk-nice-oled
+      remote: nguyendown
+      revision: main
   self:
     path: config
